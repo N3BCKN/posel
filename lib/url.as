@@ -66,27 +66,8 @@ modul Posel {
     # Merge two hashes; local wins on key conflict.
     funkcja scalaj_hashe(domyslne, lokalne) {
       niech wynik = {}
-
-      jesli domyslne != nic {
-        niech klucze_d = domyslne.klucze()
-        niech idx_d = 0
-        dopoki idx_d < klucze_d.dlg() {
-          niech klucz = klucze_d[idx_d]
-          wynik[klucz] = domyslne[klucz]
-          idx_d = idx_d + 1
-        }
-      }
-
-      jesli lokalne != nic {
-        niech klucze_l = lokalne.klucze()
-        niech idx_l = 0
-        dopoki idx_l < klucze_l.dlg() {
-          niech klucz = klucze_l[idx_l]
-          wynik[klucz] = lokalne[klucz]
-          idx_l = idx_l + 1
-        }
-      }
-
+      jesli domyslne != nic to domyslne.klucze().kazdy(fn(k) { wynik[k] = domyslne[k] })
+      jesli lokalne != nic to lokalne.klucze().kazdy(fn(k) { wynik[k] = lokalne[k] })
       zwroc wynik
     }
   }
