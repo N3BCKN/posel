@@ -1,6 +1,6 @@
 # posel
 
-A small, ergonomic HTTP client for [AlexScript](https://github.com/) — inspired
+A small, ergonomic HTTP client for [AlexScript](https://github.com/N3BCKN/alexscript) — inspired
 by [Axios](https://axios-http.com/) and [HTTParty](https://github.com/jnunemaker/httparty).
 
 Built on top of the native `Http` library, `posel` adds what a real-world client
